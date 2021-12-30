@@ -1,0 +1,31 @@
+{
+    "name": "PrivacyTab",
+    "description": "Privacy Tab is a tool for efficient privacy practice, by allowing a quick hotkey for tab lock screens. Created by Michael Reynolds.",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+      },
+    "permissions": ["contextMenus", "nativeMessaging", "activeTab", "tabs", "storage", "scripting"],
+    "host_permissions": ["*://*/*"],
+    "action": {
+        "default_title": "Click to lock tab"
+    },	
+    "content_scripts": [{
+		"js": ["content.js"],
+		"matches": ["<all_urls>"],
+		"match_about_blank": true,
+		"all_frames": false,
+		"run_at": "document_start"
+	}]
+}
+
+/*TODO:
+*   ADD HISTORY SCRUBBING
+*   ADD BACKGROUND PERMISSION TO ALLOW FOR TABS TO AUTOMATICALLY BE LOCKED ON OPEN
+*   ADD SYNC ACROSS CHROMES
+*
+*
+*
+*
+*/

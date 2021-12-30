@@ -1,0 +1,139 @@
+<head>
+    <title>PrivacyTab - Configuration</title>
+    <script defer="true" type="text/javascript" src="./configurations.js"></script>
+</head>
+
+<style>
+    .label{
+        font-weight:bolder;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        text-align: center;
+        font-size: large;
+        color: white;
+        padding: auto;
+        padding-left: 5px;
+        margin: auto;
+    }
+
+    #inputhotkey{
+        margin: auto;
+        width: 50%;
+        background-color: rgba(255,255,255,1);
+        height: 30px;
+        padding-left: 10px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: medium;
+    }
+
+    #inputhtml{
+        margin: auto;
+        width: 140%;
+        background-color: rgba(255,255,255,0.2);
+        height: 250px;
+        padding-left: 10px;
+        padding-top: 5px;
+        margin-top: 5px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: medium;
+        text-align: left;
+        resize: none;
+    }
+
+    input:focus { 
+    outline: none !important;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+    }
+    textarea:focus { 
+        outline: none !important;
+        border-color: #719ECE;
+        box-shadow: 0 0 10px #719ECE;
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+    }
+
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: black;
+    }
+
+    ::-ms-input-placeholder { /* Microsoft Edge */
+    color: black;
+    }
+
+    button{
+        margin-top: 20px;
+        justify-self: flex-end;
+        width: 100px;
+        height: 30px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: black;
+        background-color: rgba(255,255,255,0.8);
+    }
+
+    button:hover{
+        border-style: solid;
+        border-width: 1px;
+        border-color: white;
+        cursor: pointer;
+    }
+
+    @keyframes saveclick {
+        from {background-color: rgba(255,255,255,0.8);}
+        to {background-color: green;}
+    }
+
+    @keyframes resetclick {
+        from {background-color: rgba(255,255,255,0.8);}
+        to {background-color: red;}
+    }
+
+    #savebutton:active{
+        animation-name: saveclick;
+        animation-duration: 0.4s;
+    }
+
+    #resetbutton:active{
+        animation-name: resetclick;
+        animation-duration: 0.4s;
+    }
+    
+
+</style>
+
+<body style='background-image: url(./images/Background.png); overflow: hidden; display: flex; align-content: center; justify-content: center;'>
+    <div    
+        id='ConfigSection' 
+        style='
+        display: flex; 
+        border-width: 1px; 
+        border-color: grey; 
+        border-style: solid;
+        width: 450px; 
+        height: 580px;
+        margin-top: auto;
+        margin-bottom: auto;
+        overflow: hidden;
+        background-color: rgba(255,255,255,0.06);'>
+
+        <form style="width: 80%; overflow: hidden; margin-bottom: auto; margin-top: 40px; padding-bottom: auto; padding-top: 0px; padding-right: 150px; padding-left: 50px;">
+            
+            <label for="inputhotkey" class="label">Lock Hotkey</label>
+            <br>
+            <input id="inputhotkey" autocomplete="off" inputmode="none" placeholder="Set Hotkey..." value="Shift + L">
+            <br>
+            <br>
+            <br>
+            <br>
+            <label for="inputhtml" class="label">Custom LockScreen HTML</label>
+            <br>
+            <label for="inputhtml" class="label" style="color:red; font-size: small; text-align: center;">CURRENTLY DISABLED</label>
+            <br>
+            <textarea id="inputhtml" disabled DoesNothing placeholder="DISABLED"></textarea>
+            <button class="button" id="savebutton" type="button" style="background-color: green;">Save</button>  <button class="button" id="resetbutton" type="button" style="background-color: rgba(255,0,0,0.8);">Reset</button>
+        </form>
+    </div>
+</body>
